@@ -1,6 +1,6 @@
 package pq;
 
-import pq.service.ProcessQueueService;
+import pq.service.ProcessQueueServiceVersion1;
 
 /**
  * 
@@ -10,7 +10,8 @@ import pq.service.ProcessQueueService;
 //An example without dependency injection
 public class ProcessQueue {
 	// Internal reference to the service used by this client
-	private ProcessQueueService service;
+//	private ProcessQueueService service;
+	private ProcessQueueServiceVersion1 service;
 	// Constructor
 	public ProcessQueue() {
 		// Specify a specific implementation 
@@ -18,12 +19,12 @@ public class ProcessQueue {
 		this.service = new ProcessQueueServiceVersion1();
 	}
 	// Method within this client that uses the services
-	public String next() {
-		return service.getNext();
+	public void next() {
+		System.out.println(service.next());
 	}
 	
-	public String drop(Integer id) {
-		return service.drop(id);
+	public void drop(Integer id) {
+		System.out.println(service.drop(id));
 	}
 }
 

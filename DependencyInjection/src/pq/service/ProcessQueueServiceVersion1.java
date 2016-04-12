@@ -5,7 +5,7 @@ package pq.service;
  * @author NMEnego
  *
  */
-public class ProcessQueueServiceVersion1 {
+public class ProcessQueueServiceVersion1 implements ProcessQueueService{
 
 	public String next() {
 		return "next in line...";
